@@ -90,7 +90,7 @@ const Hero = () => {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             href="#projects"
-                            className="bg-white hover:bg-zinc-200 text-zinc-950 px-8 py-3 rounded-full font-semibold shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all w-full sm:w-auto text-center"
+                            className="bg-black dark:bg-white hover:bg-zinc-800 dark:hover:bg-zinc-200 text-white dark:text-zinc-950 px-8 py-3 rounded-full font-semibold shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all w-full sm:w-auto text-center"
                         >
                             View Work
                         </motion.a>

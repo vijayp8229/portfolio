@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Settings as SettingsIcon, X, Moon, Sun, Type, Palette } from 'lucide-react';
+import { Settings as SettingsIcon, X, Moon, Sun, Type, Palette, Check } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -82,10 +82,10 @@ const SettingsPanel = () => {
                                             key={c.name}
                                             onClick={() => setAccentColor(c.value)}
                                             style={{ backgroundColor: c.value }}
-                                            className={`h-12 rounded-lg transition-transform ${accentColor === c.value ? 'scale-110 ring-4 ring-offset-2 ring-offset-[var(--bg-secondary)] ring-[var(--accent-primary)]' : 'hover:scale-105'} flex items-center justify-center`}
+                                            className={`h-12 border border-black/10 dark:border-white/10 rounded-lg transition-transform ${accentColor === c.value ? 'scale-110 ring-4 ring-offset-2 ring-offset-[var(--bg-secondary)] ring-[var(--accent-primary)]' : 'hover:scale-105'} flex items-center justify-center`}
                                             title={c.name}
                                         >
-                                            {accentColor === c.value && <X className="w-4 h-4 text-white drop-shadow-md rotate-45" style={{ filter: 'brightness(10)' }} />}
+                                            {accentColor === c.value && <Check className="w-6 h-6 drop-shadow-md" style={{ color: c.name === 'White' ? '#000' : '#fff' }} />}
                                         </button>
                                     ))}
                                 </div>
