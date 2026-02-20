@@ -19,7 +19,7 @@ const About = () => {
     };
 
     return (
-        <section id="about" className="py-20 bg-black/50">
+        <section id="about" className="py-20 bg-white/50 dark:bg-black/50">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -28,7 +28,7 @@ const About = () => {
                     className="mb-16 text-center"
                 >
                     <h2 className="section-title">About Me & Skills</h2>
-                    <p className="text-zinc-400 max-w-2xl mx-auto">
+                    <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
                         I have a deep passion for building secure and scalable backend architectures.
                         My expertise lies in the PHP ecosystem, crafting robust solutions with Laravel and Drupal.
                     </p>
@@ -45,21 +45,21 @@ const About = () => {
                         <motion.div
                             key={index}
                             variants={itemVariants}
-                            className="p-6 rounded-xl bg-[#09090b] border border-white/5 hover:border-white/20 transition-all hover:bg-zinc-900/80 group"
+                            className="p-6 rounded-xl bg-white dark:bg-[#09090b] border border-black/5 dark:border-white/5 hover:border-black/20 dark:hover:border-white/20 transition-all hover:bg-zinc-100 dark:hover:bg-zinc-900/80 group"
                         >
                             <div className="flex items-center gap-4 mb-4">
-                                <div className="p-3 rounded-lg bg-white/5 text-white group-hover:bg-white group-hover:text-black transition-colors">
+                                <div className="p-3 rounded-lg bg-black/5 dark:bg-white/5 text-black dark:text-white group-hover:bg-black dark:group-hover:bg-white group-hover:text-white dark:group-hover:text-zinc-950 transition-colors">
                                     <skill.icon size={24} />
                                 </div>
-                                <h3 className="text-xl font-bold text-white">{skill.name}</h3>
+                                <h3 className="text-xl font-bold text-black dark:text-white">{skill.name}</h3>
                             </div>
 
-                            <div className="w-full bg-zinc-800 rounded-full h-2 overflow-hidden">
+                            <div className="w-full bg-zinc-200 dark:bg-zinc-800 rounded-full h-2 overflow-hidden">
                                 <motion.div
                                     initial={{ width: 0 }}
                                     whileInView={{ width: `${skill.level}%` }}
                                     transition={{ duration: 1, delay: 0.2 }}
-                                    className="h-full bg-gradient-to-r from-white to-zinc-400"
+                                    className="h-full bg-linear-to-r from-black dark:from-white to-zinc-400"
                                 />
                             </div>
                             <div className="mt-2 text-right text-sm text-gray-500">

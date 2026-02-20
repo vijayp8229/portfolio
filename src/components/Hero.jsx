@@ -56,7 +56,7 @@ const Hero = () => {
     return (
         <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
             {/* Background Elements - Subtle/Linear */}
-            <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px]" />
+            <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-black/5 dark:bg-white/5 rounded-full blur-[120px]" />
             <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-indigo-500/5 rounded-full blur-[120px]" />
 
             <div className="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-12">
@@ -66,31 +66,31 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="flex-1 text-center md:text-left"
                 >
-                    <div className="inline-block px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 mb-6 text-sm font-semibold tracking-wide">
+                    <div className="inline-block px-4 py-2 rounded-full border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 text-zinc-700 dark:text-zinc-300 mb-6 text-sm font-semibold tracking-wide">
                         Available for Projects
                     </div>
 
-                    <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-zinc-500">
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 md:mb-6 leading-tight text-transparent bg-clip-text bg-linear-to-r from-black dark:from-white to-zinc-500 break-words">
                         Hi, I'm <br />
                         {personal.name}
                     </h1>
 
-                    <div className="h-10 mb-6 flex items-center justify-center md:justify-start">
-                        <h2 className="text-2xl md:text-3xl text-zinc-400 font-light border-r-2 border-white/50 pr-2 animate-pulse">
+                    <div className="h-8 md:h-10 mb-6 flex items-center justify-center md:justify-start">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl text-zinc-600 dark:text-zinc-400 font-light border-r-2 border-black/50 dark:border-white/50 pr-2 animate-pulse">
                             {text}
                         </h2>
                     </div>
 
-                    <p className="text-zinc-500 text-lg mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
+                    <p className="text-zinc-600 dark:text-zinc-500 text-lg mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
                         {personal.description}
                     </p>
 
-                    <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start">
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                         <motion.a
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             href="#projects"
-                            className="bg-white hover:bg-zinc-200 text-black px-8 py-3 rounded-full font-semibold shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all"
+                            className="bg-white hover:bg-zinc-200 text-zinc-950 px-8 py-3 rounded-full font-semibold shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all w-full sm:w-auto text-center"
                         >
                             View Work
                         </motion.a>
@@ -98,7 +98,7 @@ const Hero = () => {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             href="#contact"
-                            className="border border-white/20 hover:border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/5 transition-all"
+                            className="border border-black/20 dark:border-white/20 hover:border-black dark:hover:border-white text-black dark:text-white px-8 py-3 rounded-full font-semibold hover:bg-black/5 dark:hover:bg-white/5 transition-all w-full sm:w-auto text-center"
                         >
                             Contact Me
                         </motion.a>
@@ -117,18 +117,18 @@ const Hero = () => {
                         style={{ rotateX, rotateY }}
                         className="relative w-full max-w-md mx-auto aspect-square group"
                     >
-                        <div className="absolute inset-0 bg-gradient-to-tr from-zinc-800 to-zinc-900 rounded-2xl opacity-50 blur-3xl group-hover:opacity-70 transition-opacity duration-500"></div>
-                        <div className="relative z-10 bg-[#09090b] border border-white/10 rounded-2xl p-8 shadow-2xl">
-                            <div className="flex items-center gap-2 mb-4 border-b border-white/5 pb-4">
+                        <div className="absolute inset-0 bg-linear-to-tr from-zinc-200 dark:from-zinc-800 to-zinc-300 dark:to-zinc-900 rounded-2xl opacity-50 blur-3xl group-hover:opacity-70 transition-opacity duration-500"></div>
+                        <div className="relative z-10 bg-white dark:bg-[#09090b] border border-black/10 dark:border-white/10 rounded-2xl p-8 shadow-2xl">
+                            <div className="flex items-center gap-2 mb-4 border-b border-black/5 dark:border-white/5 pb-4">
                                 <div className="w-3 h-3 rounded-full bg-zinc-700"></div>
                                 <div className="w-3 h-3 rounded-full bg-zinc-700"></div>
                                 <div className="w-3 h-3 rounded-full bg-zinc-700"></div>
                             </div>
-                            <div className="space-y-3 font-mono text-sm text-zinc-500">
+                            <div className="space-y-3 font-mono text-sm text-zinc-600 dark:text-zinc-500">
                                 <div className="flex">
-                                    <span className="text-indigo-400 mr-2">class</span>
-                                    <span className="text-white">Developer</span>
-                                    <span className="text-zinc-600"> {`{`}</span>
+                                    <span className="text-indigo-600 dark:text-indigo-400 mr-2">class</span>
+                                    <span className="text-black dark:text-white">Developer</span>
+                                    <span className="text-zinc-400 dark:text-zinc-600"> {`{`}</span>
                                 </div>
                                 <div className="pl-4">
                                     <span className="text-purple-400">constructor</span>() {`{`}
