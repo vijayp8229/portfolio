@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Linkedin, Github, Send, Loader2, CheckCircle } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Mail, Linkedin, Github, Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { portfolioData } from '../data/portfolio';
 
@@ -9,10 +9,12 @@ const Contact = () => {
     const form = useRef();
     const [isSending, setIsSending] = useState(false);
     const [isSent, setIsSent] = useState(false);
+    const [isError, setIsError] = useState(false);
 
     const sendEmail = (e) => {
         e.preventDefault();
         setIsSending(true);
+        setIsError(false);
 
         // Replace these with your actual EmailJS Header-ID, Template-ID, and Public Key
         // Sign up at https://www.emailjs.com/
@@ -26,7 +28,8 @@ const Contact = () => {
             }, (error) => {
                 console.log(error.text);
                 setIsSending(false);
-                alert("Failed to send message. Please try again or email directly.");
+                setIsError(true);
+                setTimeout(() => setIsError(false), 8000); // Reset error after 8s
             });
     };
 
@@ -106,6 +109,19 @@ const Contact = () => {
                                     <>Send Message <Send size={18} /></>
                                 )}
                             </button>
+                            <AnimatePresence>
+                                {isError && (
+                                    <motion.div
+                                        initial={{ opacity: 0, height: 0 }}
+                                        animate={{ opacity: 1, height: 'auto' }}
+                                        exit={{ opacity: 0, height: 0 }}
+                                        className="p-4 rounded-lg bg-red-500/10 border border-red-500/20 text-red-500 text-sm flex items-center gap-2 overflow-hidden mt-4"
+                                    >
+                                        <AlertCircle size={18} />
+                                        <span>Failed to send message. Please try again or email directly to {personal.email}.</span>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
                         </form>
                     </motion.div>
                 </div>

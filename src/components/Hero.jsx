@@ -66,10 +66,6 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="flex-1 text-center md:text-left"
                 >
-                    <div className="inline-block px-4 py-2 rounded-full border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 text-zinc-700 dark:text-zinc-300 mb-6 text-sm font-semibold tracking-wide">
-                        Available for Projects
-                    </div>
-
                     <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 md:mb-6 leading-tight text-transparent bg-clip-text bg-linear-to-r from-black dark:from-white to-zinc-500 break-words">
                         Hi, I'm <br />
                         {personal.name}
