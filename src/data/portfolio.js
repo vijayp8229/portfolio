@@ -2,7 +2,7 @@ import { Code2, Database, Globe, Server, Layers, Cpu } from 'lucide-react';
 
 export const portfolioData = {
   personal: {
-    name: "Vijay Developer",
+    name: "Vijay Prajapati",
     title: "Full Stack Developer",
     subtitle: "Specializing in Laravel, Drupal & Modern Web Technologies",
     description: "I build robust, scalable, and secure backend systems while crafting intuitive frontend experiences. With deep expertise in the PHP ecosystem, I turn complex requirements into elegant solutions.",
