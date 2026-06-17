@@ -51,7 +51,7 @@ const Projects = () => {
                                     <a href={project.github} className="flex items-center gap-2 text-sm font-semibold text-zinc-600 dark:text-zinc-500 hover:text-black dark:hover:text-white transition-colors">
                                         <Github size={18} /> Code
                                     </a>
-                                    <a href={project.link} className="flex items-center gap-2 text-sm font-semibold text-black dark:text-white hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors ml-auto">
+                                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-semibold text-black dark:text-white hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors ml-auto">
                                         Live Demo <ExternalLink size={18} />
                                     </a>
                                 </div>
