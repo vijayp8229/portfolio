@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vijayp8229.github.io/portfolio/sitemap.xml
