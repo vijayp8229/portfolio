@@ -53,6 +53,10 @@ const Hero = () => {
         y.set(event.clientY - rect.top - rect.height / 2);
     }
 
+    const profileImagePath = personal.profileImage 
+        ? `${import.meta.env.BASE_URL}${personal.profileImage.replace(/^\//, '')}` 
+        : `${import.meta.env.BASE_URL}profile.jpg`;
+
     return (
         <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
             {/* Background Elements - Subtle/Linear */}
@@ -105,47 +109,47 @@ const Hero = () => {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8 }}
-                    className="flex-1 relative hidden md:block perspective-1000"
+                    className="flex-1 w-full relative perspective-1000 mt-10 md:mt-0"
                     onMouseMove={handleMouseMove}
                     style={{ perspective: 1000 }}
                 >
                     <motion.div
                         style={{ rotateX, rotateY }}
-                        className="relative w-full max-w-md mx-auto aspect-square group"
+                        className="relative w-full max-w-[320px] md:max-w-md mx-auto aspect-[3/4] group cursor-pointer"
                     >
-                        <div className="absolute inset-0 bg-linear-to-tr from-zinc-200 dark:from-zinc-800 to-zinc-300 dark:to-zinc-900 rounded-2xl opacity-50 blur-3xl group-hover:opacity-70 transition-opacity duration-500"></div>
-                        <div className="relative z-10 bg-white dark:bg-[#09090b] border border-black/10 dark:border-white/10 rounded-2xl p-8 shadow-2xl">
-                            <div className="flex items-center gap-2 mb-4 border-b border-black/5 dark:border-white/5 pb-4">
-                                <div className="w-3 h-3 rounded-full bg-zinc-700"></div>
-                                <div className="w-3 h-3 rounded-full bg-zinc-700"></div>
-                                <div className="w-3 h-3 rounded-full bg-zinc-700"></div>
+                        {/* Glow effect with colors matching the photo's warm maroon background */}
+                        <div className="absolute inset-0 bg-gradient-to-tr from-rose-900/30 via-amber-900/25 to-zinc-900/10 dark:from-rose-950/40 dark:via-amber-950/30 dark:to-zinc-950/20 rounded-[2rem] opacity-75 blur-3xl group-hover:opacity-100 transition-opacity duration-500"></div>
+                        
+                        {/* Interactive Frame */}
+                        <div className="relative h-full w-full z-10 bg-white/5 dark:bg-zinc-950/30 backdrop-blur-md border border-black/10 dark:border-white/10 rounded-[2rem] p-3 shadow-2xl overflow-hidden flex flex-col justify-between transition-colors duration-300 hover:border-black/20 dark:hover:border-white/20">
+                            {/* Profile Image container */}
+                            <div className="relative w-full flex-1 rounded-2xl overflow-hidden bg-zinc-900">
+                                <img 
+                                    src={profileImagePath} 
+                                    alt={personal.name} 
+                                    className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                                />
+                                {/* Bottom overlay gradient */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60"></div>
                             </div>
-                            <div className="space-y-3 font-mono text-sm text-zinc-600 dark:text-zinc-500">
-                                <div className="flex">
-                                    <span className="text-indigo-600 dark:text-indigo-400 mr-2">class</span>
-                                    <span className="text-black dark:text-white">Developer</span>
-                                    <span className="text-zinc-400 dark:text-zinc-600"> {`{`}</span>
+                            
+                            {/* Glass Info Bar */}
+                            <div className="mt-3 px-3 py-2 flex items-center justify-between border-t border-black/5 dark:border-white/5">
+                                <div>
+                                    <h3 className="font-bold text-zinc-900 dark:text-zinc-100 text-sm md:text-base tracking-wide">{personal.name}</h3>
+                                    <p className="text-xs text-zinc-500 dark:text-zinc-400 font-light">{personal.title}</p>
                                 </div>
-                                <div className="pl-4">
-                                    <span className="text-purple-400">constructor</span>() {`{`}
+                                <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900/5 dark:bg-zinc-500/10 border border-black/5 dark:border-white/5">
+                                    <span className="relative flex h-2 w-2">
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                    </span>
+                                    <span className="text-[10px] md:text-xs font-semibold text-zinc-800 dark:text-zinc-300">Available</span>
                                 </div>
-                                <div className="pl-8">
-                                    <span className="text-indigo-400">this</span>.<span className="text-zinc-400">stack</span> = [
-                                    <span className="text-green-400">'Laravel'</span>,
-                                    <span className="text-cyan-400">'Drupal'</span>
-                                    ];
-                                </div>
-                                <div className="pl-4">{`}`}</div>
-                                <div className="pl-4">
-                                    <span className="text-purple-400">buildFuture</span>() {`{`}
-                                </div>
-                                <div className="pl-8">
-                                    <span className="text-indigo-400">return</span> <span className="text-emerald-400">'Scalable Solutions'</span>;
-                                </div>
-                                <div className="pl-4">{`}`}</div>
-                                <div>{`}`}</div>
                             </div>
                         </div>
+
+
                     </motion.div>
                 </motion.div>
             </div>
