@@ -115,7 +115,7 @@ const Hero = () => {
                 >
                     <motion.div
                         style={{ rotateX, rotateY }}
-                        className="relative w-full max-w-[320px] md:max-w-md mx-auto aspect-[3/4] group cursor-pointer"
+                        className="relative w-full max-w-[280px] md:max-w-[330px] mx-auto aspect-[3/4] group cursor-pointer"
                     >
                         {/* Glow effect with colors matching the photo's warm maroon background */}
                         <div className="absolute inset-0 bg-gradient-to-tr from-rose-900/30 via-amber-900/25 to-zinc-900/10 dark:from-rose-950/40 dark:via-amber-950/30 dark:to-zinc-950/20 rounded-[2rem] opacity-75 blur-3xl group-hover:opacity-100 transition-opacity duration-500"></div>
